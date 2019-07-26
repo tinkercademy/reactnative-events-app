@@ -1,12 +1,12 @@
 import React from "react";
 import { ExpoConfigView } from "@expo/samples";
 
-export default class SettingsScreen extends React.Component {
+export default class ContactScreen extends React.Component {
   render() {
     return <ExpoConfigView />;
   }
 }
 
-SettingsScreen.navigationOptions = {
+ContactScreen.navigationOptions = {
   title: "app.json",
 };

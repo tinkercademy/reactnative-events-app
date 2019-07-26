@@ -7,8 +7,8 @@ import {
 
 import TabBarIcon from "../components/TabBarIcon";
 import HomeScreen from "../screens/HomeScreen";
-import LinksScreen from "../screens/LinksScreen";
-import SettingsScreen from "../screens/SettingsScreen";
+import EventsScreen from "../screens/EventsScreen";
+import ContactScreen from "../screens/ContactScreen";
 
 const config = Platform.select({
   web: { headerMode: "screen" },
@@ -38,14 +38,14 @@ HomeStack.navigationOptions = {
 
 HomeStack.path = "";
 
-const LinksStack = createStackNavigator(
+const EventsStack = createStackNavigator(
   {
-    Links: LinksScreen,
+    Links: EventsScreen,
   },
   config
 );
 
-LinksStack.navigationOptions = {
+EventsStack.navigationOptions = {
   tabBarLabel: "Links",
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
@@ -55,16 +55,16 @@ LinksStack.navigationOptions = {
   ),
 };
 
-LinksStack.path = "";
+EventsStack.path = "";
 
-const SettingsStack = createStackNavigator(
+const ContactStack = createStackNavigator(
   {
-    Settings: SettingsScreen,
+    Settings: ContactScreen,
   },
   config
 );
 
-SettingsStack.navigationOptions = {
+ContactStack.navigationOptions = {
   tabBarLabel: "Settings",
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
@@ -74,12 +74,12 @@ SettingsStack.navigationOptions = {
   ),
 };
 
-SettingsStack.path = "";
+ContactStack.path = "";
 
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
-  LinksStack,
-  SettingsStack,
+  EventsStack,
+  ContactStack,
 });
 
 tabNavigator.path = "";
